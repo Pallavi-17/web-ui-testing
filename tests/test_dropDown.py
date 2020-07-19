@@ -6,7 +6,6 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.by import By
 import time
 
-
 @pytest.fixture
 def browser():
   driver = webdriver.Chrome(executable_path="D:\\drivers\\chromedriver.exe")
@@ -15,16 +14,18 @@ def browser():
   driver.quit()
 
 
+def select_values_dd(element, value):
+    select = Select(element)
+    select.select_by_visible_text(value)
+
+
 def test_basic_dropDown_search(browser):
     URL = 'https://www.orangehrm.com/orangehrm-30-day-trial/'
     browser.get(URL)
     weIndustry = browser.find_element(By.ID, 'Form_submitForm_Industry')
     weCountry = browser.find_element(By.ID, 'Form_submitForm_Country')
-    selectIndustry = Select(weIndustry)
-    selectIndustry.select_by_visible_text('Aerospace')
-    selectCountry = Select(weCountry)
-    selectCountry.select_by_value('Australia')
-
+    select_values_dd(weIndustry, 'Healthcare')
+    select_values_dd(weCountry, 'Israel')
    # selectCountry.select_by_index(4)
     time.sleep(3)
     #print(selectCountry.is_multiple)
