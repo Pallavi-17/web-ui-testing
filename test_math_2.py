@@ -1,2 +1,2 @@
 def test_Mod():
-  assert 1234 % 10 == 2
+  assert 12345 % 10 == 5
