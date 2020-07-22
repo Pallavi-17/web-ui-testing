@@ -24,8 +24,13 @@ def test_basic_dropDown_search(browser):
     browser.get(URL)
     weIndustry = browser.find_element(By.ID, 'Form_submitForm_Industry')
     weCountry = browser.find_element(By.ID, 'Form_submitForm_Country')
+    wePhone = browser.find_element(By.ID, 'Form_submitForm_Contact')
+    weFirstName = browser.find_element(By.ID, 'Form_submitForm_FirstName')
     select_values_dd(weIndustry, 'Healthcare')
     select_values_dd(weCountry, 'Israel')
+    weFirstName.send_keys('Alok R')
+    wePhone.send_keys('9988776600')
+
     weLastName = browser.find_element(By.ID, 'Form_submitForm_LastName')
     weEmail = browser.find_element(By.ID, 'Form_submitForm_Email')
     weLastName.send_keys('Singh')
