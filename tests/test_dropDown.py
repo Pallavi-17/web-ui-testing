@@ -31,6 +31,10 @@ def test_basic_dropDown_search(browser):
     weFirstName.send_keys('Alok R')
     wePhone.send_keys('9988776600')
 
+    weLastName = browser.find_element(By.ID, 'Form_submitForm_LastName')
+    weEmail = browser.find_element(By.ID, 'Form_submitForm_Email')
+    weLastName.send_keys('Singh')
+    weEmail.send_keys('arSingh@gmail.com')
    # selectCountry.select_by_index(4)
     time.sleep(3)
     #print(selectCountry.is_multiple)

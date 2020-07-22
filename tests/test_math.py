@@ -8,3 +8,6 @@ def test_subtraction():
 
 def test_multiply():
   assert  4*2 == 2
+
+def test_cube():
+  assert  4*4*4 == 64
